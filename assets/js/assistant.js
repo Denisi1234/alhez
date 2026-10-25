@@ -72,7 +72,7 @@
 				result = responseText ? JSON.parse(responseText) : {};
 			} catch (parseError) {
 				if (/<\?php|alhez_assistant_respond/.test(responseText)) {
-					throw new Error('This preview server is serving PHP as plain text. Run the site through PHP with GROQ_API_KEY configured.');
+					throw new Error('This preview server is serving PHP as plain text. Run the site through a PHP server to use the assistant.');
 				}
 				throw new Error('The assistant service is temporarily unavailable. Please try again shortly or contact contact@alhez.co.tz.');
 			}
