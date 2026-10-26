@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /assets/mail/
+Disallow: /assets/api/
 
 Sitemap: https://alhez.co.tz/sitemap.xml
+Host: https://alhez.co.tz

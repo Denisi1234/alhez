@@ -7,8 +7,13 @@
 	<title>ALHEZ Medical Supplies | Medical &amp; Laboratory Equipment in Tanzania</title>
 	<meta name="description" content="ALHEZ Medical Supplies Limited supplies medical, laboratory, scientific, veterinary, and educational products to institutions across Tanzania.">
 	<link rel="canonical" href="https://alhez.co.tz/">
-	<meta name="robots" content="index,follow">
+	<link rel="alternate" hreflang="en-TZ" href="https://alhez.co.tz/">
+	<link rel="alternate" hreflang="x-default" href="https://alhez.co.tz/">
+	<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+	<meta name="geo.region" content="TZ-02">
+	<meta name="geo.placename" content="Dar es Salaam">
 	<meta property="og:type" content="website">
+	<meta property="og:locale" content="en_TZ">
 	<meta property="og:site_name" content="ALHEZ Medical Supplies Limited">
 	<meta property="og:title" content="ALHEZ Medical Supplies | Medical &amp; Laboratory Equipment in Tanzania">
 	<meta property="og:description" content="Medical, laboratory, scientific, veterinary, and educational supply solutions for institutions across Tanzania.">
@@ -22,6 +27,8 @@
 	<meta name="twitter:description" content="Medical, laboratory, scientific, veterinary, and educational supply solutions for institutions across Tanzania.">
 	<meta name="theme-color" content="#ffffff">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Google Search Console verification: paste the meta tag Google gives you on the line below, then redeploy. -->
+	<!-- <meta name="google-site-verification" content="YOUR_TOKEN_HERE"> -->
 
 	<!-- Place favicon.ico in the root directory -->
 	<link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/favicon.png">
@@ -44,22 +51,34 @@
 	<script type="application/ld+json">
 	{
 	  "@context": "https://schema.org",
-	  "@type": "Organization",
+	  "@type": "MedicalBusiness",
+	  "@id": "https://alhez.co.tz/#organization",
 	  "name": "ALHEZ Medical Supplies Limited",
+	  "alternateName": "ALHEZ",
 	  "url": "https://alhez.co.tz/",
 	  "logo": "https://alhez.co.tz/assets/img/logo/alhez-logo.png",
+	  "image": "https://alhez.co.tz/assets/img/alhez/Medical-Supply-or-Equipment.jpg",
+	  "description": "ALHEZ Medical Supplies Limited supplies medical, laboratory, scientific, veterinary, and educational products to institutions across Tanzania.",
 	  "email": "info@alhez.co.tz",
 	  "telephone": "+255 757 382 236",
 	  "address": {
 	    "@type": "PostalAddress",
 	    "postOfficeBoxNumber": "14244",
 	    "addressLocality": "Dar es Salaam",
+	    "addressRegion": "Dar es Salaam",
 	    "addressCountry": "TZ"
 	  },
 	  "areaServed": { "@type": "Country", "name": "Tanzania" },
+	  "knowsAbout": [
+	    "Medical supplies",
+	    "Laboratory equipment",
+	    "Scientific supplies",
+	    "Veterinary supplies",
+	    "Educational supplies"
+	  ],
 	  "contactPoint": [
-	    { "@type": "ContactPoint", "email": "contact@alhez.co.tz", "contactType": "customer service" },
-	    { "@type": "ContactPoint", "email": "partnership@alhez.co.tz", "contactType": "partnerships" }
+	    { "@type": "ContactPoint", "email": "contact@alhez.co.tz", "contactType": "customer service", "areaServed": "TZ", "availableLanguage": "English" },
+	    { "@type": "ContactPoint", "email": "partnership@alhez.co.tz", "contactType": "partnerships", "areaServed": "TZ", "availableLanguage": "English" }
 	  ]
 	}
 	</script>
@@ -67,9 +86,31 @@
 	{
 	  "@context": "https://schema.org",
 	  "@type": "WebSite",
+	  "@id": "https://alhez.co.tz/#website",
 	  "name": "ALHEZ Medical Supplies Limited",
 	  "alternateName": "ALHEZ",
-	  "url": "https://alhez.co.tz/"
+	  "url": "https://alhez.co.tz/",
+	  "inLanguage": "en-TZ",
+	  "publisher": { "@id": "https://alhez.co.tz/#organization" }
+	}
+	</script>
+	<script type="application/ld+json">
+	{
+	  "@context": "https://schema.org",
+	  "@type": "WebPage",
+	  "@id": "https://alhez.co.tz/#webpage",
+	  "url": "https://alhez.co.tz/",
+	  "name": "ALHEZ Medical Supplies | Medical & Laboratory Equipment in Tanzania",
+	  "description": "ALHEZ Medical Supplies Limited supplies medical, laboratory, scientific, veterinary, and educational products to institutions across Tanzania.",
+	  "isPartOf": { "@id": "https://alhez.co.tz/#website" },
+	  "about": { "@id": "https://alhez.co.tz/#organization" },
+	  "inLanguage": "en-TZ",
+	  "breadcrumb": {
+	    "@type": "BreadcrumbList",
+	    "itemListElement": [
+	      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alhez.co.tz/" }
+	    ]
+	  }
 	}
 	</script>
 	<style>
