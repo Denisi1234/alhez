@@ -5166,3 +5166,31 @@ header.header.single-head .navbar.in {
 @media (max-width: 991px) {
 	.alhez-faq .about-primary-link { margin-bottom: 30px; }
 }
+
+/* Mobile navigation close button */
+.mobile-menu-close {
+	position: absolute;
+	top: 14px;
+	right: 14px;
+	z-index: 2;
+	display: none;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	place-items: center;
+	border: 1px solid rgba(20, 94, 90, .25);
+	border-radius: 50%;
+	background: #fff;
+	color: #145e5a;
+	font-size: 2.4rem;
+	line-height: 1;
+	cursor: pointer;
+}
+.bsnav-mobile.in { z-index: 120; }
+.bsnav-mobile.in .mobile-menu-close { display: grid; }
+.mobile-menu-close:hover,
+.mobile-menu-close:focus-visible {
+	background: #145e5a;
+	color: #fff;
+	outline: none;
+}
