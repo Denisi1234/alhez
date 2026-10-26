@@ -1,18 +1,22 @@
 DirectoryIndex index.html
 ErrorDocument 404 /404.html
+AddDefaultCharset UTF-8
 
+<IfModule mod_autoindex.c>
 Options -Indexes
+</IfModule>
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
+RewriteBase /
+
+# Canonical host + HTTPS in one hop: www -> non-www
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
 
 # Force HTTPS
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-
-# Canonical host: www -> non-www
-RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
 
 # Canonical homepage: /index.html -> /
 RewriteCond %{THE_REQUEST} \s/+index\.html(?:[\s?]) [NC]
@@ -22,6 +26,9 @@ RewriteRule ^index\.html$ / [R=301,L]
 # Compression
 <IfModule mod_deflate.c>
 AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml image/svg+xml
+</IfModule>
+<IfModule mod_brotli.c>
+AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml image/svg+xml
 </IfModule>
 
 # Browser caching
@@ -36,6 +43,9 @@ ExpiresByType image/png "access plus 1 year"
 ExpiresByType image/webp "access plus 1 year"
 ExpiresByType image/svg+xml "access plus 1 year"
 ExpiresByType image/x-icon "access plus 1 year"
+ExpiresByType font/woff "access plus 1 year"
+ExpiresByType font/woff2 "access plus 1 year"
+ExpiresByType application/pdf "access plus 1 month"
 </IfModule>
 
 # Security headers
@@ -43,4 +53,7 @@ ExpiresByType image/x-icon "access plus 1 year"
 Header always set X-Content-Type-Options "nosniff"
 Header always set X-Frame-Options "SAMEORIGIN"
 Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Content-Language "en-TZ"
+Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+Header always set Strict-Transport-Security "max-age=31536000"
 </IfModule>

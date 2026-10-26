@@ -5105,20 +5105,6 @@ header.header.single-head .navbar.in {
 
 
 /* Accessibility foundations */
-.skip-link {
-	position: fixed;
-	top: 12px;
-	left: 12px;
-	z-index: 100000;
-	transform: translateY(calc(-100% - 16px));
-	padding: 12px 18px;
-	border-radius: 4px;
-	background: #fff;
-	color: #145e5a;
-	font-weight: 700;
-	box-shadow: 0 2px 12px rgba(0, 0, 0, .22);
-}
-.skip-link:focus { transform: translateY(0); color: #145e5a; outline: 3px solid #087f9e; outline-offset: 3px; }
 :focus-visible { outline: 3px solid #087f9e; outline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) {
 	html:focus-within { scroll-behavior: auto !important; }
@@ -5128,4 +5114,55 @@ header.header.single-head .navbar.in {
 		scroll-behavior: auto !important;
 		transition-duration: .01ms !important;
 	}
+}
+
+/* FAQ section */
+.alhez-faq { background: #fff; }
+.alhez-faq h5 {
+	display: inline-block;
+	margin-bottom: 14px;
+	color: #0cb1eb;
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: .08em;
+	text-transform: uppercase;
+}
+.alhez-faq h2 { margin-bottom: 16px; color: #17334a; }
+.alhez-faq p { color: #5c6b77; line-height: 1.75; }
+.alhez-faq-item {
+	margin-bottom: 12px;
+	border: 1px solid #e3ebf1;
+	border-left: 4px solid #0cb1eb;
+	border-radius: 6px;
+	background: #fff;
+	box-shadow: 0 6px 18px rgba(22, 57, 83, .06);
+}
+.alhez-faq-item summary {
+	position: relative;
+	padding: 16px 44px 16px 18px;
+	color: #17334a;
+	font-weight: 700;
+	line-height: 1.45;
+	cursor: pointer;
+	list-style: none;
+}
+.alhez-faq-item summary::-webkit-details-marker { display: none; }
+.alhez-faq-item summary::after {
+	content: "+";
+	position: absolute;
+	top: 50%;
+	right: 18px;
+	transform: translateY(-50%);
+	color: #0cb1eb;
+	font-size: 22px;
+	font-weight: 700;
+	line-height: 1;
+}
+.alhez-faq-item[open] summary::after { content: "\2212"; }
+.alhez-faq-item summary:focus-visible { outline: 3px solid #087f9e; outline-offset: -3px; }
+.alhez-faq-item p { margin: 0; padding: 0 18px 18px; }
+.alhez-faq-item a { color: #145e5a; text-decoration: underline; }
+.alhez-faq-item a:hover { color: #0cb1eb; }
+@media (max-width: 991px) {
+	.alhez-faq .about-primary-link { margin-bottom: 30px; }
 }

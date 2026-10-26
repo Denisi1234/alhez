@@ -8,6 +8,21 @@
 (function($) {
     "use strict";
 
+    /* Optional plugin fallbacks: unused libraries are not loaded on this site. */
+    if (typeof WOW === 'undefined') {
+        window.WOW = function() { this.init = function() {}; };
+    }
+    var alhezNoop = function() { return this; };
+    $.each(['owlCarousel', 'magnificPopup', 'isotope', 'mb_YTPlayer', 'easyPieChart', 'slick'], function(i, name) {
+        if (typeof $.fn[name] !== 'function') { $.fn[name] = alhezNoop; }
+    });
+    if (typeof $.fn.imagesLoaded !== 'function') {
+        $.fn.imagesLoaded = function(cb) {
+            if (typeof cb === 'function') { cb(); }
+            return this;
+        };
+    }
+
     $(document).on('ready', function() {
 
 		// Keep the off-canvas mobile menu state accessible and easy to close.
