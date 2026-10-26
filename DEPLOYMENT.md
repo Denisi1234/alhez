@@ -20,7 +20,7 @@ The built-in assistant does not call an external AI provider and needs no API ke
 ## Namecheap cPanel upload
 
 1. In Namecheap, open **Hosting List → Go to cPanel**. In cPanel's **Domains** page, confirm the document root for `alhez.co.tz` (usually `public_html` for the primary domain).
-2. Back up any files already in that document root. In **File Manager**, upload the latest `alhez-cpanel-upload-chat-hidden.zip` package to the document root and extract it there. Confirm `index.html`, `assets/`, and the other site files are directly in the document root, not inside an extra nested folder.
+2. Back up any files already in that document root. In **File Manager**, upload the latest `alhez-cpanel-upload-seo-accessibility.zip` package to the document root and extract it there. Confirm `index.html`, `assets/`, and the other site files are directly in the document root, not inside an extra nested folder.
 3. In cPanel's **Select PHP Version**, use PHP 8.1 or newer. The assistant and both forms require PHP execution; a static preview server will not run them.
 4. No AI API key or private assistant config file is needed; assistant replies come from built-in ALHEZ FAQ logic.
 5. Confirm the domain points to this hosting account, then enable/install SSL in cPanel before using `https://alhez.co.tz`.
@@ -36,3 +36,10 @@ The built-in assistant does not call an external AI provider and needs no API ke
 5. Confirm the host enforces HTTPS and that PHP errors are not displayed to visitors.
 
 The source files are prepared for production, but live form delivery cannot be confirmed until the site is deployed with the host's mail transport.
+
+## SEO and accessibility updates
+
+- Upload the Apache configuration file to the document root to canonicalize the homepage from `/index.html` and serve the custom 404 page. If a configuration file already exists in cPanel, back it up and merge these directives instead of replacing the existing file.
+- The pages use HTTPS canonical URLs. After the SSL certificate is confirmed active for the domain, enable an HTTP-to-HTTPS redirect in cPanel or add the Namecheap HTTPS rewrite rule. Do not force HTTPS before SSL is working.
+- Keyboard users can skip to the main content; navigation, focus indicators, decorative image handling, and reduced-motion preferences have been improved.
+- Google Search Console still needs to be configured for the property and sitemap; code changes do not guarantee indexing or rankings.
